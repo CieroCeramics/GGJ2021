@@ -87,7 +87,40 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Portal"))
         {
+
+
+            switch(GameSettings.CurrentMission)
+            {
+                case 0:
+                GameSettings.FirstMissionComplete=true;
+                if (_collected[0]==5)
+                {
+                    GameSettings.MissionSuccess = true;
+                    GameSettings.CurrentMission ++;
+                }
+                else GameSettings.MissionSuccess = false;
+                break;
+                case 1:
+                if (_collected[1]==10)
+                {
+                    GameSettings.MissionSuccess = true;
+                    GameSettings.CurrentMission ++;
+                }
+                else GameSettings.MissionSuccess = false;
+                break;
+                case 2:
+                if (_collected[2]==15)
+                {
+                    GameSettings.MissionSuccess = true;
+                    GameSettings.CurrentMission ++;
+                }
+                else GameSettings.MissionSuccess = false;
+                break;
+            }
+
             SceneManager.LoadScene("LobbyScene");
+
+            
         }
     }
 

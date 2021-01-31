@@ -45,6 +45,7 @@ public class TextProgression : MonoBehaviour
     {
         "... Analyzing soul data \n",
         "\"... you did not collect the rigt souls!\"\n \nGo Back and get the right ones!",
+        "make sure you have the right color and number",
         "you did not collect sould OF THE CORRECT NATURE\n re enter the soul world and try again. \n",
         "tap space to retry"
     };
@@ -57,6 +58,12 @@ public class TextProgression : MonoBehaviour
 
     void Start()
     {
+        if (GameSettings.FirstMissionComplete == false)
+        {
+            stage = 0;
+        }
+
+        charImg.sprite = charImgArray[stage];
         t = 0;
         bgImg.color = Color.black;
         charImg.enabled = false;
@@ -68,7 +75,12 @@ public class TextProgression : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+if (!GameSettings.FirstMissionComplete)
+{
+     stager(textArray1);
+}
+else if (GameSettings.MissionSuccess)
+{
         switch (stage)
         {
             case 0:
@@ -77,8 +89,17 @@ public class TextProgression : MonoBehaviour
             case 1:
                 stager(textArray2);
                 break;
+            case 2:
+                stager(textArray3);
+                break;
+            case 3:
+            //ty for playing;
+            break;
+           
 
         }
+}
+else stager(textArrayBAD);
 
 
     }
