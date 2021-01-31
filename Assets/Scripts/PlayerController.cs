@@ -7,6 +7,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private int[] _collected;
 
     public bool FlashLightOn { get; private set; }
-    public Text soulCount;
+    public TMP_Text soulCount;
 
     public float speed = 10.0f;
     private float translation;
@@ -83,7 +84,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("portal"))
+        if (other.CompareTag("Portal"))
         {
             SceneManager.LoadScene("LobbyScene");
         }

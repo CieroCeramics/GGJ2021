@@ -90,7 +90,9 @@ public class SoulBehavior : MonoBehaviour
     {
         //print("collided");
 
-        Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
+        var effect = Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
+        
+        Destroy(effect, 2f);
 
         playerController.CollectSoul(type);
         Destroy(gameObject);
