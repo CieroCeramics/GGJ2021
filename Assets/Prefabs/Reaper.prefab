@@ -469,12 +469,11 @@ MonoBehaviour:
   idleWaitTime: 2
   detectDistance: 10
   attackDistance: 8
+  attackHoldTime: 1
   patrolSpeed: 5
   chaseSpeed: 8
   minPosition: {x: -133.6025, y: 2, z: -172.4473}
   maxPosition: {x: 118.3, y: 2, z: 104.98}
-  _distance: 0
-  _dot: 0
 --- !u!95 &8482725660418181287
 Animator:
   serializedVersion: 3
@@ -1313,20 +1312,20 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b75888fc000a5eb41bc93f6b79634076, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 60
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1359,7 +1358,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
