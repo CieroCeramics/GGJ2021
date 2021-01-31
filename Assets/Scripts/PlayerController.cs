@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerController : MonoBehaviour
@@ -88,4 +89,13 @@ public class PlayerController : MonoBehaviour
         lightSourceObject.SetActive(state);
         FlashLightOn = state;
     }
+
+    private void onTriggerEnter(Collider other)
+        {
+            if (other.tag == "portal")
+            {
+                SceneManager.LoadScene("LobbyScene");
+            }
+        }
+    
 }
