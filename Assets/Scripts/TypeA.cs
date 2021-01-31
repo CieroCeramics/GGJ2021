@@ -45,7 +45,7 @@ public class TypeA : SoulBehavior
     
     private void Wander()
     {
-        print("wander");
+        //print("wander");
         
         if (timer < wanderTimer)
             return;
@@ -57,7 +57,7 @@ public class TypeA : SoulBehavior
 
     private void Flee()
     {
-        print("Flee:");
+        //print("Flee:");
         Vector3 a = transform.position;
         Vector3 b = transform.position;
 
