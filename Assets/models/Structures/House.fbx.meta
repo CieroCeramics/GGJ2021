@@ -3,7 +3,32 @@ guid: 2b8ebb8233cd84f4b8949f2553340683
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Snolw Roof
+    second: {fileID: 2100000, guid: 5331ddc309605d943a0ba8e63c164dae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trim
+    second: {fileID: 2100000, guid: e3ae316f065c39c419e21f26a30dfecc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: walls
+    second: {fileID: 2100000, guid: 70c7308991afff640b46207a3d6c39ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: window
+    second: {fileID: 2100000, guid: 53dd234143738564b94d036fee6c98ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: window.001
+    second: {fileID: 2100000, guid: 2a780e8e129d2e540bfd66c4d78ad9c6, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
