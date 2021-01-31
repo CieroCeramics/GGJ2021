@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateUI()
     {
-        var sum = _collected.Sum();
+        var sum = _collected.Sum(x => x);
         soulCount.text = $"{sum}";
     }
 

@@ -177,6 +177,8 @@ MonoBehaviour:
   timeToChangeDirection: 0
   particleEffectPrefab: {fileID: 6590753270245563916, guid: a3cab6cf9124cc44d81d03a11a3a7928,
     type: 3}
+  collectSoundEffectPrefab: {fileID: 9128519735387351000, guid: dc4dfe907c64b0848ab83aca70d4c81f,
+    type: 3}
   ColorSets:
   - mainColor: {r: 0.83137256, g: 0.28266665, b: 0.28266665, a: 1}
     emissiveColor: {r: 0.95699996, g: 0.10814103, b: 0.10814103, a: 1}

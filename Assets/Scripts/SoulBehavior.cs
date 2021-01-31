@@ -27,6 +27,7 @@ public class SoulBehavior : MonoBehaviour
     private static readonly int EmissionColor = Shader.PropertyToID("Color_C908B841");
     
     protected static PlayerController playerController;
+    protected static ReaperController reaperController;
     
     protected bool lighton { get; private set; }
 
@@ -38,6 +39,7 @@ public class SoulBehavior : MonoBehaviour
     public float timeToChangeDirection;
 
     public GameObject particleEffectPrefab;
+    public GameObject collectSoundEffectPrefab;
 
 
     private new Renderer renderer;
@@ -46,6 +48,8 @@ public class SoulBehavior : MonoBehaviour
     private ColorSet[] ColorSets;
 
 
+    private bool _captured;
+
     //====================================================================================================================//
     
     // Start is called before the first frame update
@@ -53,6 +57,9 @@ public class SoulBehavior : MonoBehaviour
     {
         if (!playerController)
             playerController = FindObjectOfType<PlayerController>();
+
+        if (!reaperController)
+            reaperController = FindObjectOfType<ReaperController>();
         
         lighton = playerController.FlashLightOn;
     }
@@ -88,14 +95,24 @@ public class SoulBehavior : MonoBehaviour
     
     public virtual void CaptureSoul()
     {
-        //print("collided");
-
-        var effect = Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
+        if (_captured)
+            return;
         
-        Destroy(effect, 2f);
+        _captured = true;
+
+        var currentPosition = transform.position;
+
+        reaperController.InvestigatePoint(currentPosition);
+
+        var sound = Instantiate(collectSoundEffectPrefab, currentPosition, Quaternion.identity);
+        var effect = Instantiate(particleEffectPrefab, currentPosition, Quaternion.identity);
+        
+        Destroy(sound, 2f);
+        Destroy(effect, 3f);
 
         playerController.CollectSoul(type);
         Destroy(gameObject);
+        
     }
 
 

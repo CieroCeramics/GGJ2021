@@ -212,6 +212,15 @@ public class ReaperController : MonoBehaviour, IAttackEvent
 
     //====================================================================================================================//
 
+    public void InvestigatePoint(in Vector3 worldPosition)
+    {
+        if (_currentState == STATE.CHASE || _currentState == STATE.ATTACK)
+            return;
+
+        _currentState = STATE.MOVE;
+        SetNewTargetPosition(worldPosition);
+    }
+
     private void SetNewTargetPosition(in Vector3 targetPosition)
     {
         _navMeshAgent.SetDestination(targetPosition);
