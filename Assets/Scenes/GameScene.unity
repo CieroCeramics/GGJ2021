@@ -108,7 +108,7 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 2
     agentHeight: 2
-    agentSlope: 45
+    agentSlope: 5
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: b27d789cdc233124caef65fc8a21efbf, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!4 &1248838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 163a9f966a521934ca4c943b2b70cad2,
@@ -1233,6 +1233,95 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 869426458}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &65343652
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9109669252949587384, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: m_Name
+      value: SoulPrefab (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109669252949587385, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: ThePlayer
+      value: 
+      objectReference: {fileID: 1849609206}
+    - target: {fileID: 9109669252949587385, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: soulCol.r
+      value: 0.9622642
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109669252949587385, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: soulCol.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109669252949587385, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: soulCol.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109669252949587387, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109669252949587387, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109669252949587387, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.044
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109669252949587387, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109669252949587387, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109669252949587387, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109669252949587387, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109669252949587387, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109669252949587387, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109669252949587387, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109669252949587387, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0a0de36d5ed363c418f3fe9878d939dc, type: 3}
 --- !u!1001 &66299575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49500,11 +49589,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoulPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 9109669252949587385, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+    - target: {fileID: 9109669252949587386, guid: 0a0de36d5ed363c418f3fe9878d939dc,
         type: 3}
-      propertyPath: ThePlayer
-      value: 
-      objectReference: {fileID: 1849609206}
+      propertyPath: m_WalkableMask
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9109669252949587387, guid: 0a0de36d5ed363c418f3fe9878d939dc,
         type: 3}
       propertyPath: m_RootOrder

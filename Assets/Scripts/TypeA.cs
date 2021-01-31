@@ -14,7 +14,7 @@ public class TypeA : SoulBehavior
     private float timer;
  
     public float fleeRadius;
-    public GameObject ThePlayer;
+    
     // Use this for initialization
     void OnEnable () {
         agent = GetComponent<NavMeshAgent> ();
@@ -38,8 +38,8 @@ public class TypeA : SoulBehavior
         Vector3 b = transform.position; 
 
         Vector3 c = a-b;
-
-        agent.SetDestination(c);
+        c = Vector3.Normalize(c);
+        agent.SetDestination(c); 
     }
     // Update is called once per frame
     void Update () {
