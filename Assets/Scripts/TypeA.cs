@@ -5,73 +5,77 @@ using UnityEngine.AI;
 
 public class TypeA : SoulBehavior
 {
-
     public float wanderRadius;
     public float wanderTimer;
- 
+
     private Transform target;
     private NavMeshAgent agent;
     private float timer;
- 
+
     public float fleeRadius;
+
+    //====================================================================================================================//
     
     // Use this for initialization
-    void OnEnable () {
-        agent = GetComponent<NavMeshAgent> ();
+    protected override void Start()
+    {
+        base.Start();
+        
+        agent = GetComponent<NavMeshAgent>();
         timer = wanderTimer;
     }
- 
-    void Wander()
+
+
+    // Update is called once per frame
+    private void Update()
     {
-         print("wander");
-        if (timer >= wanderTimer) {
-            Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
-            agent.SetDestination(newPos);
-            timer = 0;
+        timer += Time.deltaTime;
+
+        float dist = Vector3.Distance(playerController.transform.position, transform.position);
+
+        if (dist > fleeRadius)
+        {
+            Wander();
         }
+        else 
+            Flee();
     }
 
-    void Flee()
+    //====================================================================================================================//
+    
+    private void Wander()
+    {
+        print("wander");
+        
+        if (timer < wanderTimer)
+            return;
+        
+        Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
+        agent.SetDestination(newPos);
+        timer = 0;
+    }
+
+    private void Flee()
     {
         print("Flee:");
         Vector3 a = transform.position;
-        Vector3 b = transform.position; 
+        Vector3 b = transform.position;
 
-        Vector3 c = a-b;
+        Vector3 c = a - b;
         c = Vector3.Normalize(c);
-        agent.SetDestination(c); 
+        agent.SetDestination(c);
     }
-    // Update is called once per frame
-    void Update () {
-        timer += Time.deltaTime;
- 
-        
 
-
-
-
-
-        float dist = Vector3.Distance(ThePlayer.transform.position, transform.position);
-
-         if (dist > fleeRadius)
-         {
-             Wander();
-         }
-         else Flee();
-    }
- 
-    
-
-
-    public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask) {
+    private static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
+    {
         Vector3 randDirection = Random.insideUnitSphere * dist;
- 
+
         randDirection += origin;
- 
+
         NavMeshHit navHit;
- 
-        NavMesh.SamplePosition (randDirection, out navHit, dist, layermask);
- 
+
+        NavMesh.SamplePosition(randDirection, out navHit, dist, layermask);
+
         return navHit.position;
     }
 }
