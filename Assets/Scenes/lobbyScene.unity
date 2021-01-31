@@ -132,7 +132,6 @@ GameObject:
   - component: {fileID: 393406402}
   - component: {fileID: 393406405}
   - component: {fileID: 393406404}
-  - component: {fileID: 393406403}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -161,21 +160,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.11999512, y: 0.5}
   m_SizeDelta: {x: -2.843689, y: -3.407318}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &393406403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 393406401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fea864c3d58343642aeb30e5a9a19df3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mText: {fileID: 1455223056}
-  charImg: {fileID: 1272863433}
-  bgImg: {fileID: 634071991}
 --- !u!114 &393406404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,7 +286,7 @@ GameObject:
   - component: {fileID: 634071992}
   - component: {fileID: 634071991}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -336,7 +320,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 634071989}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -346,13 +330,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: c7b8ec2838f31814e9d10e58af9e3971, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
+  m_Sprite: {fileID: 21300000, guid: 23eab9e91c85ebb40807687590143693, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &634071992
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -531,7 +518,7 @@ GameObject:
   - component: {fileID: 1272863434}
   - component: {fileID: 1272863433}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: CharacterImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -565,7 +552,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1272863431}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -575,13 +562,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 6cb10d8f1a9eaff4f8f23226a280b608, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
+  m_Sprite: {fileID: 21300000, guid: 6cb10d8f1a9eaff4f8f23226a280b608, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1272863434
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -910,6 +900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2007766590}
+  - component: {fileID: 2007766591}
   - component: {fileID: 2007766589}
   - component: {fileID: 2007766588}
   - component: {fileID: 2007766587}
@@ -1000,3 +991,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2007766591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007766586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea864c3d58343642aeb30e5a9a19df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mText: {fileID: 1455223056}
+  charImgArray:
+  - {fileID: 21300000, guid: 6cb10d8f1a9eaff4f8f23226a280b608, type: 3}
+  - {fileID: 21300000, guid: ec6fd85a176c9b84bbf25934d85c2ba8, type: 3}
+  - {fileID: 21300000, guid: ec66388e736a0c84dbfd64b5233acee0, type: 3}
+  bgImg: {fileID: 634071991}
+  charImg: {fileID: 1272863433}
