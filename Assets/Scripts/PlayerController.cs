@@ -6,11 +6,18 @@
  */
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
+
 
 public class PlayerController : MonoBehaviour
 {
+    public int typeACount = 0;
+    public int typeBCount = 0;
+    public int typeCcount = 0;
+    public int total = 0;
     public bool FlashLightOn { get; private set; }
+    public Text soulCount;
     
     public float speed = 10.0f;
     private float translation;
@@ -69,6 +76,9 @@ public class PlayerController : MonoBehaviour
         {
             SetLightState(!FlashLightOn);
         }
+
+        total = typeACount + typeBCount + typeCcount;
+        soulCount.text = total.ToString();
     }
 
     //====================================================================================================================//

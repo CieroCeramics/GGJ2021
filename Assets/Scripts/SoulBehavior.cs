@@ -65,8 +65,22 @@ public class SoulBehavior : MonoBehaviour
         print("collided");
 
         Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
+       
+       switch (type)
+       {
+           case 0:
+           playerController.typeACount ++;
+           break;
+           case 1:
+           playerController.typeBCount ++;
+           break;
+           case 2:
+           playerController.typeCcount ++;
+           break;
+       }
         Destroy(gameObject);
     }
+
 
     protected void SetColor(in Color color)
     {

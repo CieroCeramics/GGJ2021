@@ -24,7 +24,7 @@ public class TextProgression : MonoBehaviour
         t=0;
         bgImg.color = Color.black;
         charImg.enabled= false;
-         mText.text = textArray[0];
+         mText.text = "[tap space bar]";
     }
 
     // Update is called once per frame
