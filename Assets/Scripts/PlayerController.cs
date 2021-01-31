@@ -1,4 +1,4 @@
-﻿/* 
+﻿/*
  * author : jiankaiwang
  * description : The script provides you with basic operations of first personal control.
  * platform : Unity
@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerController : MonoBehaviour
@@ -80,6 +81,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("portal"))
+        {
+            SceneManager.LoadScene("LobbyScene");
+        }
+    }
+
     //====================================================================================================================//
     public int GetTypeCount(in SoulBehavior.TYPE type)
     {
@@ -92,7 +101,7 @@ public class PlayerController : MonoBehaviour
 
         UpdateUI();
     }
-    
+
     private void SetLightState(bool state)
     {
         lightSourceObject.SetActive(state);
@@ -106,5 +115,5 @@ public class PlayerController : MonoBehaviour
     }
 
     //====================================================================================================================//
-    
+
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Soul
   - CaptureLight
+  - Portal
   layers:
   - Default
   - TransparentFX
