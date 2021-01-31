@@ -32,7 +32,7 @@ public class SoulBehavior : MonoBehaviour
     {
         {
             print("ontrigger");
-            if (other.tag == "Player")
+            if (other.tag == "CaptureLight")
             {
                 mr.enabled = false;
                 ps.Play();

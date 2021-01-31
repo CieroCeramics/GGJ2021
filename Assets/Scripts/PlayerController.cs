@@ -18,10 +18,13 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField, Header("Flash Light")]
     private GameObject lightSourceObject;
+    private Light spotLight;
 
     [SerializeField]
     private bool setFlashLightOnStart;
 
+    private BoxCollider Caputure;
+   
     //====================================================================================================================//
     
     // Use this for initialization
@@ -29,8 +32,10 @@ public class PlayerController : MonoBehaviour
     {
         // turn off the cursor
         Cursor.lockState = CursorLockMode.Locked;
-
+         spotLight = lightSourceObject.GetComponentInChildren<Light>();
+         Caputure = lightSourceObject.GetComponent<BoxCollider>();
         SetLightState(setFlashLightOnStart);
+        Caputure.enabled=false;
     }
 
     // Update is called once per frame
@@ -48,6 +53,18 @@ public class PlayerController : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
 
+        if(Input.GetKey(KeyCode.Mouse1))
+        {
+            spotLight.color = Color.red;
+            Caputure.enabled= true;
+            
+        }
+
+        else  
+        {
+            spotLight.color = Color.white;
+            Caputure.enabled=false;
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SetLightState(!FlashLightOn);
