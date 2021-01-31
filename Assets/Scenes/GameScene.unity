@@ -49589,6 +49589,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoulPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 9109669252949587385, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: soulCol.r
+      value: 0.8962264
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109669252949587385, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: soulCol.g
+      value: 0.32551616
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109669252949587385, guid: 0a0de36d5ed363c418f3fe9878d939dc,
+        type: 3}
+      propertyPath: soulCol.b
+      value: 0.32551616
+      objectReference: {fileID: 0}
     - target: {fileID: 9109669252949587386, guid: 0a0de36d5ed363c418f3fe9878d939dc,
         type: 3}
       propertyPath: m_WalkableMask
