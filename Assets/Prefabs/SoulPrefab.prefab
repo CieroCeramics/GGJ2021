@@ -181,11 +181,11 @@ MonoBehaviour:
     type: 3}
   ColorSets:
   - mainColor: {r: 0.83137256, g: 0.28266665, b: 0.28266665, a: 1}
-    emissiveColor: {r: 0.95699996, g: 0.10814103, b: 0.10814103, a: 1}
+    emissiveColor: {r: 0.23921569, g: 0.02745098, b: 0.02745098, a: 1}
   - mainColor: {r: 0.19971518, g: 0.8301887, b: 0.60471064, a: 1}
-    emissiveColor: {r: 0.10996375, g: 0.6597825, b: 0.31800327, a: 1}
+    emissiveColor: {r: 0.02745098, g: 0.16470589, b: 0.07941177, a: 1}
   - mainColor: {r: 0.19999999, g: 0.7105007, b: 0.83137256, a: 1}
-    emissiveColor: {r: 0.1098039, g: 0.2569496, b: 0.65882355, a: 1}
+    emissiveColor: {r: 0.02745098, g: 0.064705886, b: 0.16470589, a: 1}
   wanderRadius: 14
   wanderTimer: 5
   fleeRadius: 10

@@ -67,8 +67,8 @@ public class ReaperController : MonoBehaviour, IAttackEvent
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
         
-        //TODO Need to wait to start
-        SetState(STATE.IDLE);
+        _isChasing = _playerController.FlashLightOn;
+        SetState(_playerController.FlashLightOn ? STATE.CHASE : STATE.IDLE);
     }
 
     // Update is called once per frame
@@ -180,8 +180,7 @@ public class ReaperController : MonoBehaviour, IAttackEvent
 
     private void ChaseState()
     {
-        if(_isChasing)
-            SetNewTargetPosition(_playerController.transform.position);
+        if(_isChasing) SetNewTargetPosition(_playerController.transform.position);
         
         //TODO Check to see if the player is in range
         if (Vector3.Distance(_playerController.transform.position, transform.position) <= attackDistance)
@@ -191,7 +190,7 @@ public class ReaperController : MonoBehaviour, IAttackEvent
             return;
         }
         
-        if (_navMeshAgent.remainingDistance > 0.1f)
+        if (Vector3.Distance(transform.position, _navMeshAgent.destination) > 1.7f)
             return;
         
         //Stops Moving the reaper
@@ -223,7 +222,7 @@ public class ReaperController : MonoBehaviour, IAttackEvent
 
     private void SetNewTargetPosition(in Vector3 targetPosition)
     {
-        _navMeshAgent.SetDestination(targetPosition);
+        _navMeshAgent.SetDestination(FindNewPosition(targetPosition));
     }
 
     private bool IsPlayerInView()
@@ -256,6 +255,13 @@ public class ReaperController : MonoBehaviour, IAttackEvent
 
         return !NavMesh.SamplePosition(newPosition, out var navMeshHit, 5.0f, NavMesh.AllAreas)
             ? FindNewRandomPosition()
+            : navMeshHit.position;
+    }
+    
+    private Vector3 FindNewPosition(in Vector3 newPosition)
+    {
+        return !NavMesh.SamplePosition(newPosition, out var navMeshHit, 5.0f, NavMesh.AllAreas)
+            ? throw new Exception()
             : navMeshHit.position;
     }
 

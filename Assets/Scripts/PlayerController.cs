@@ -42,8 +42,9 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         spotLight = lightSourceObject.GetComponentInChildren<Light>();
         Caputure = lightSourceObject.GetComponent<BoxCollider>();
-        SetLightState(setFlashLightOnStart);
         Caputure.enabled = false;
+        
+        SetLightState(setFlashLightOnStart);
 
         _collected = new int[3];
 

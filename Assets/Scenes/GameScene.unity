@@ -34198,6 +34198,11 @@ PrefabInstance:
       propertyPath: soulCount
       value: 
       objectReference: {fileID: 1138560043}
+    - target: {fileID: 3080356624402638893, guid: 7834bab22f5db9142aef422258de8764,
+        type: 3}
+      propertyPath: setFlashLightOnStart
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7834bab22f5db9142aef422258de8764, type: 3}
 --- !u!4 &1095531595 stripped
